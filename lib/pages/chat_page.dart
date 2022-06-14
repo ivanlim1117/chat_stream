@@ -14,11 +14,9 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  TextEditingController textController = TextEditingController();
   late Stream<ChatMessageModel> streamChat;
   late Timer timer;
   final StreamController<List<dynamic>> _streamController = StreamController();
-  String text1 = "";
 
   getMsg() async {
     try {
@@ -31,10 +29,8 @@ class _ChatPageState extends State<ChatPage> {
       );
 
       final databody = json.decode(response.body);
-      print(databody['chat_message']);
       _streamController.sink.add(databody['chat_message']);
     } catch (ex) {
-      print(ex);
       _streamController.close();
     }
   }
@@ -75,7 +71,6 @@ class _ChatPageState extends State<ChatPage> {
                 );
               default:
                 if (snapshot.hasError) {
-                  print(snapshot.error);
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
@@ -91,7 +86,6 @@ class _ChatPageState extends State<ChatPage> {
                         //     snapshot.data![index]['message'].toString());
                       });
                 } else {
-                  print('no data');
                   return Container();
                 }
             }
