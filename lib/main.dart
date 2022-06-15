@@ -1,6 +1,12 @@
+import 'package:chat_stream/pages/notification.dart';
+import 'package:chat_stream/pages/notification2.dart';
 import 'package:flutter/material.dart';
 
+import 'pages/chat_container.dart';
 import 'pages/chat_page.dart';
+import 'pages/pass_data_to_previous_page.dart';
+import 'pages/push_replacement.dart';
+import 'pages/two_futures.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,7 +63,27 @@ class _MyHomePageState extends State<MyHomePage> {
                     MaterialPageRoute(builder: (context) => const ChatPage()),
                   );
                 },
-                child: Text("Next page"))
+                child: const Text("Stream Builder")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PassData2PreviousScreen()),
+                  );
+                },
+                child: const Text("2 Futures")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ChatContainer(
+                              isEntered: false,
+                            )),
+                  );
+                },
+                child: const Text("Notification")),
           ],
         ),
       ),
