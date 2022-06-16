@@ -1,5 +1,6 @@
 import 'package:chat_stream/pages/notification.dart';
 import 'package:chat_stream/pages/notification2.dart';
+import 'package:chat_stream/two_futures_1.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/chat_container.dart';
@@ -56,20 +57,19 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.push(
+            //         context,
+            //         MaterialPageRoute(builder: (context) =>  ChatPage(chatRoomId: ,)),
+            //       );
+            //     },
+            //     child: const Text("Stream Builder")),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const ChatPage()),
-                  );
-                },
-                child: const Text("Stream Builder")),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PassData2PreviousScreen()),
+                    MaterialPageRoute(builder: (context) => SecondTwoFutures()),
                   );
                 },
                 child: const Text("2 Futures")),
