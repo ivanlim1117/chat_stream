@@ -7,6 +7,7 @@ import 'pages/chat_container.dart';
 import 'pages/chat_page.dart';
 import 'pages/pass_data_to_previous_page.dart';
 import 'pages/push_replacement.dart';
+import 'pages/scratch_card.dart';
 import 'pages/two_futures.dart';
 
 void main() {
@@ -65,6 +66,14 @@ class _MyHomePageState extends State<MyHomePage> {
             //       );
             //     },
             //     child: const Text("Stream Builder")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ScratchCardPage()),
+                  );
+                },
+                child: const Text("Scratch card")),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
