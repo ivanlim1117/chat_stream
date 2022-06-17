@@ -39,8 +39,20 @@ class _ScratchCardPageState extends State<ScratchCardPage> {
               brushSize: 50,
               threshold: 50,
               image: Image.asset("assets/trick.jpeg"),
-              onChange: (value) => print("Scratch progress: $value%"),
-              onThreshold: () => print("Threshold reached, you won!"),
+              onChange: (value) {},
+              onThreshold: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: const Text('You Won!'),
+                  content: const Text('Congratulations!'),
+                  actions: <Widget>[
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'OK'),
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ),
+              ),
               child: Container(
                 height: 300,
                 width: 300,
