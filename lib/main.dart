@@ -1,3 +1,4 @@
+import 'package:chat_stream/pages/flutter_chat_ui_page.dart';
 import 'package:chat_stream/pages/notification.dart';
 import 'package:chat_stream/pages/notification2.dart';
 import 'package:chat_stream/two_futures_1.dart';
@@ -66,6 +67,14 @@ class _MyHomePageState extends State<MyHomePage> {
             //       );
             //     },
             //     child: const Text("Stream Builder")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FlutterChatUi()),
+                  );
+                },
+                child: const Text("Flutter Chat UI")),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
